@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Github Client</string>
+    <string name="app_name">Github Search Client</string>
+    <string name="token">Token</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+    <string name="github_token_needed">Github token is required. You can create new token by pressing below link. Create a token and write it the text field.</string>
 </resources>

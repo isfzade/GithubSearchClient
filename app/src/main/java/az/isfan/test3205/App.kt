@@ -1,4 +1,7 @@
 package az.isfan.test3205
 
-class App {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class App: Application()

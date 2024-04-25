@@ -3,6 +3,7 @@ package az.isfan.test3205.activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import az.isfan.test3205.navigation.NavGraph
 import az.isfan.test3205.ui.theme.Test3205Theme
 
 class MainActivity : ComponentActivity() {
@@ -10,7 +11,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Test3205Theme {
-
+                NavGraph()
             }
         }
     }
