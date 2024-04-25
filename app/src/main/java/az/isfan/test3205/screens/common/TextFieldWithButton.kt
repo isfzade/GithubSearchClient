@@ -16,15 +16,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
-import az.isfan.test3205.R
-import kotlinx.coroutines.launch
 
 @Composable
 fun TextFieldWithButton(
@@ -47,22 +43,26 @@ fun TextFieldWithButton(
         )
     ) {
         TextField(
+            modifier = Modifier
+                .weight(3f),
             value = fieldText ?: "",
             onValueChange = { newText ->
                 fieldText = newText
             },
-            trailingIcon = {
-                IconButton(
-                    onClick = {
-                        fieldText = null
+            trailingIcon = if (fieldText != null) {
+                {
+                    IconButton(
+                        onClick = {
+                            fieldText = null
+                        }
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Clear,
+                            contentDescription = "Clear search bar"
+                        )
                     }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Clear,
-                        contentDescription = "Clear search bar"
-                    )
                 }
-            },
+            } else null,
             keyboardOptions = KeyboardOptions(
                 imeAction = imeAction,
                 autoCorrect = false
@@ -78,6 +78,8 @@ fun TextFieldWithButton(
         )
 
         Button(
+            modifier = Modifier
+                .weight(1f),
             onClick = {
                 onButtonClick(fieldText)
             }

@@ -14,7 +14,7 @@ fun SearchScreen(
 
         },
         onHistoryTopBarButtonClick = {
-
+            navController.navigate(RouteEnum.HISTORY.name)
         },
         onTokenTopBarButtonClick = {
             navController.navigate(RouteEnum.TOKEN.name)

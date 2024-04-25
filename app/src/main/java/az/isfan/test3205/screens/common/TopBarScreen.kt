@@ -2,16 +2,14 @@ package az.isfan.test3205.screens.common
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Token
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun TopBarScreen(
@@ -19,6 +17,7 @@ fun TopBarScreen(
     onBackButtonClick: (() -> Unit)? = null,
     onHistoryButtonClick: (() -> Unit)? = null,
     onTokenButtonClick: (() -> Unit)? = null,
+    onSearchButtonClick: (() -> Unit)? = null,
 ) {
     TopAppBar(
         title = {
@@ -61,6 +60,19 @@ fun TopBarScreen(
                     Icon(
                         imageVector = Icons.Default.Token,
                         contentDescription = "token button"
+                    )
+                }
+            }
+
+            if (onSearchButtonClick != null) {
+                IconButton(
+                    onClick = {
+                        onSearchButtonClick()
+                    }
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "search button"
                     )
                 }
             }

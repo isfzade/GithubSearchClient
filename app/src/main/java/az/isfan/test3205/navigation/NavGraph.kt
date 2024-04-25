@@ -18,7 +18,7 @@ fun NavGraph(
 
     NavHost(
         navController = navController,
-        startDestination = RouteEnum.SEARCH.name
+        startDestination = RouteEnum.TOKEN.name
     ) {
         composable(route = RouteEnum.SEARCH.name) {
             Log.i(TAG, "NavGraph: route=${RouteEnum.SEARCH}")
@@ -32,6 +32,11 @@ fun NavGraph(
             TokenScreen(
                 navController = navController,
             )
+        }
+
+        composable(route = RouteEnum.HISTORY.name) {
+            Log.i(TAG, "NavGraph: route=${RouteEnum.HISTORY}")
+
         }
     }
 }

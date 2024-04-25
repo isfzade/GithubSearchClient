@@ -14,11 +14,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import az.isfan.test3205.R
+import az.isfan.test3205.data.models.TokenData
 import az.isfan.test3205.general.Constants
 import az.isfan.test3205.screens.common.TextFieldWithButton
 
 @Composable
 fun ItemsInToken(
+    token: TokenData,
     onSaveButtonClick: (tokenText: String?) -> Unit,
 ) {
     val uriHandler = LocalUriHandler.current
@@ -53,6 +55,7 @@ fun ItemsInToken(
 
         item {
             TextFieldWithButton(
+                defaultFieldValue = token.token,
                 imeAction = ImeAction.Done,
                 buttonText = stringResource(R.string.save),
                 onButtonClick = onSaveButtonClick,
