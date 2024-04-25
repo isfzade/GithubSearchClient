@@ -6,7 +6,9 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class TokenRepo @Inject constructor(private val dao: TokenDao): TokenRepoInterface {
+class TokenRepo @Inject constructor(
+    private val dao: TokenDao
+): TokenRepoInterface {
     override suspend fun insert(token: TokenEntity) {
         dao.insert(token)
     }

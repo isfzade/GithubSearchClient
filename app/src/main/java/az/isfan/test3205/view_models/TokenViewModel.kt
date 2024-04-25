@@ -61,7 +61,6 @@ class TokenViewModel @Inject constructor(
             try {
                 coroutineScope {
                     insertTokenToDbUseCase.execute(newToken)
-
                 }
             }
             catch (e: Exception) {

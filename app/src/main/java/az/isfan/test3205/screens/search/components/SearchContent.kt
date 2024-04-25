@@ -7,13 +7,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import az.isfan.test3205.R
+import az.isfan.test3205.data.models.RepoData
+import az.isfan.test3205.general.Cavab
 import az.isfan.test3205.screens.common.TopBarScreen
 
 @Composable
 fun SearchContent(
-    onSearchButtonClick: (searchText: String?) -> Unit,
+    repos: Cavab<List<RepoData>>,
+    onSearchButtonClick: (userName: String?) -> Unit,
     onHistoryTopBarButtonClick: () -> Unit,
     onTokenTopBarButtonClick: () -> Unit,
+    onOpenLinkClick: (repo: RepoData) -> Unit,
+    onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -29,7 +34,10 @@ fun SearchContent(
                 .padding(padding)
         ) {
             ItemsInSearch(
+                repos = repos,
                 onSearchButtonClick = onSearchButtonClick,
+                onOpenLinkClick = onOpenLinkClick,
+                onDownloadButtonClick = onDownloadButtonClick
             )
         }
     }

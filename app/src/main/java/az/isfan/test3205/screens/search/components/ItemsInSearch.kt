@@ -10,11 +10,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import az.isfan.test3205.R
+import az.isfan.test3205.data.models.RepoData
+import az.isfan.test3205.general.Cavab
 import az.isfan.test3205.screens.common.TextFieldWithButton
 
 @Composable
 fun ItemsInSearch(
+    repos: Cavab<List<RepoData>>,
     onSearchButtonClick: (searchText: String?) -> Unit,
+    onOpenLinkClick: (repo: RepoData) -> Unit,
+    onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {
     LazyColumn(
         modifier = Modifier
@@ -28,6 +33,16 @@ fun ItemsInSearch(
                 buttonText = stringResource(R.string.search),
                 onButtonClick = onSearchButtonClick,
             )
+        }
+
+        if (repos is Cavab.Success) {
+            items(count = repos.data.size) { index ->
+                ItemInRepo(
+                    repo = repos.data[index],
+                    onOpenLinkClick = onOpenLinkClick,
+                    onDownloadButtonClick = onDownloadButtonClick,
+                )
+            }
         }
     }
 }
