@@ -18,7 +18,6 @@ import az.isfan.test3205.screens.common.TextFieldWithButton
 fun ItemsInSearch(
     repos: Cavab<List<RepoData>>,
     onSearchButtonClick: (searchText: String?) -> Unit,
-    onOpenLinkClick: (repo: RepoData) -> Unit,
     onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {
     LazyColumn(
@@ -39,7 +38,6 @@ fun ItemsInSearch(
             items(count = repos.data.size) { index ->
                 ItemInRepo(
                     repo = repos.data[index],
-                    onOpenLinkClick = onOpenLinkClick,
                     onDownloadButtonClick = onDownloadButtonClick,
                 )
             }

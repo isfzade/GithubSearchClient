@@ -17,7 +17,6 @@ fun SearchContent(
     onSearchButtonClick: (userName: String?) -> Unit,
     onHistoryTopBarButtonClick: () -> Unit,
     onTokenTopBarButtonClick: () -> Unit,
-    onOpenLinkClick: (repo: RepoData) -> Unit,
     onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {
     Scaffold(
@@ -36,7 +35,6 @@ fun SearchContent(
             ItemsInSearch(
                 repos = repos,
                 onSearchButtonClick = onSearchButtonClick,
-                onOpenLinkClick = onOpenLinkClick,
                 onDownloadButtonClick = onDownloadButtonClick
             )
         }

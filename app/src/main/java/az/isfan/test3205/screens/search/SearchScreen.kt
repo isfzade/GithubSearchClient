@@ -29,9 +29,6 @@ fun SearchScreen(
         onTokenTopBarButtonClick = {
             navController.navigate(RouteEnum.TOKEN.name)
         },
-        onOpenLinkClick = { repo ->
-
-        },
         onDownloadButtonClick = { repo ->
 
         }

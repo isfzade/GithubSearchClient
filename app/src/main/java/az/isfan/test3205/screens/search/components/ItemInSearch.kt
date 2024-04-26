@@ -1,6 +1,6 @@
 package az.isfan.test3205.screens.search.components
 
-import androidx.compose.foundation.border
+import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -21,8 +20,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -34,9 +33,10 @@ import coil.compose.AsyncImage
 @Composable
 fun ItemInRepo(
     repo: RepoData,
-    onOpenLinkClick: (repo: RepoData) -> Unit,
     onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {
+    val uriHandler = LocalUriHandler.current
+
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -108,7 +108,11 @@ fun ItemInRepo(
             ) {
                 IconButton(
                     onClick = {
-                        onOpenLinkClick(repo)
+                        try {
+                            uriHandler.openUri(repo.url)
+                        } catch (e: Exception) {
+                            Log.e("isf_", "Github token link: error = $e")
+                        }
                     }
                 ) {
                     Icon(
