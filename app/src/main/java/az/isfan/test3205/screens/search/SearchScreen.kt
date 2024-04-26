@@ -43,6 +43,7 @@ fun SearchScreen(
                         url = repo.downloadUrl,
                         token = token
                     )
+                    searchViewModel.saveDownload(repo)
                 }
                 catch (e: Exception) {
                     Log.e("isf_", "Download: e=$e")

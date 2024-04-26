@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import az.isfan.test3205.data.enums.RouteEnum
+import az.isfan.test3205.screens.history.HistoryScreen
 import az.isfan.test3205.screens.search.SearchScreen
 import az.isfan.test3205.screens.token.TokenScreen
 
@@ -36,7 +37,9 @@ fun NavGraph(
 
         composable(route = RouteEnum.HISTORY.name) {
             Log.i(TAG, "NavGraph: route=${RouteEnum.HISTORY}")
-
+            HistoryScreen(
+                navController = navController,
+            )
         }
     }
 }

@@ -7,6 +7,5 @@ import androidx.room.PrimaryKey
 data class TokenEntity(
     @PrimaryKey(autoGenerate = false)
     var id: Long = 0,
-
     var token: String? = null
 )

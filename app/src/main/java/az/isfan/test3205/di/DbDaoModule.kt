@@ -2,6 +2,7 @@ package az.isfan.test3205.di
 
 import android.content.Context
 import az.isfan.test3205.data.db.Db
+import az.isfan.test3205.data.db.dao.DownloadDao
 import az.isfan.test3205.data.db.dao.TokenDao
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,8 @@ class DbDaoModule {
     @Singleton
     @Provides
     fun provideTokenDao(@ApplicationContext context: Context): TokenDao = Db.getDB(context).tokenDao()
+
+    @Singleton
+    @Provides
+    fun provideDownloadDao(@ApplicationContext context: Context): DownloadDao = Db.getDB(context).downloadDao()
 }
