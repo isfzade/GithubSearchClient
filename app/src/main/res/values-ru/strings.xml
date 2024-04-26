@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Поиск на Github</string>
+    <string name="search">Поиск</string>
+    <string name="fail">Провал</string>
+    <string name="ok">Ok</string>
+    <string name="download_history">История загрузки</string>
+    <string name="nothing_to_show">Нечего показывать</string>
+</resources>
