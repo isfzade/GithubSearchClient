@@ -26,6 +26,9 @@ class SearchViewModel @Inject constructor(
     private val _repos = MutableStateFlow<Cavab<List<RepoData>>>(Cavab.StandBy)
     val repos = _repos.asStateFlow()
 
+    private val _token = MutableStateFlow<String?>(null)
+    val token = _token.asStateFlow()
+
     fun resetRepos() {
         Log.i(TAG, "resetRepos: ")
 
@@ -41,11 +44,12 @@ class SearchViewModel @Inject constructor(
             try {
                 coroutineScope {
                     _repos.update { Cavab.Loading }
-                    val token = getTokenFromDbUseCase.execute() ?: throw Exception("Token cannot be null")
+                    val tokenFromDb = getTokenFromDbUseCase.execute() ?: throw Exception("Token cannot be null")
                     if (userName == null) throw Exception("Write something to search")
+                    _token.update { tokenFromDb.token!! }
                     val reposFromApi = searchByApiUseCase.execute(
                         userName = userName,
-                        token = token.token!!,
+                        token = tokenFromDb.token!!,
                     )
                     _repos.update {
                         Cavab.Success(reposFromApi)

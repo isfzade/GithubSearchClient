@@ -15,7 +15,8 @@ fun ItemApiData.toData(): RepoData {
         name = name,
         url = url,
         description = description,
-        downloadUrl = downloadUrl,
+        downloadUrl = downloadUrl.replace("{archive_format}{/ref}", "zipball/$defaultBranch"),
+        defaultBranch = defaultBranch,
         owner = owner.toData()
     )
 }

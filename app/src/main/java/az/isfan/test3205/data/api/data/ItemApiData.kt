@@ -7,8 +7,10 @@ data class ItemApiData(
     @SerializedName("html_url")
     val url: String,
     val description: String?,
-    @SerializedName("downloads_url")
+    @SerializedName("archive_url")
     val downloadUrl: String,
+    @SerializedName("default_branch")
+    val defaultBranch: String,
     val owner: OwnerApiData,
 )
 

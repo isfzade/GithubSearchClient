@@ -5,5 +5,6 @@ data class RepoData(
     val url: String,
     val description: String?,
     val downloadUrl: String,
+    val defaultBranch: String,
     val owner: OwnerData,
 )
