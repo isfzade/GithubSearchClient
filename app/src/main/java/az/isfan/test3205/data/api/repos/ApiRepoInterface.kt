@@ -6,6 +6,5 @@ import retrofit2.Response
 interface ApiRepoInterface {
     suspend fun search(
         userName: String,
-        token: String,
     ): Response<SearchApiData>
 }

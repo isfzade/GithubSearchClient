@@ -16,7 +16,6 @@ fun SearchContent(
     repos: Cavab<List<RepoData>>,
     onSearchButtonClick: (userName: String?) -> Unit,
     onHistoryTopBarButtonClick: () -> Unit,
-    onTokenTopBarButtonClick: () -> Unit,
     onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {
     Scaffold(
@@ -24,7 +23,6 @@ fun SearchContent(
             TopBarScreen(
                 title = stringResource(R.string.app_name),
                 onHistoryButtonClick = onHistoryTopBarButtonClick,
-                onTokenButtonClick = onTokenTopBarButtonClick,
             )
         }
     ) { padding ->

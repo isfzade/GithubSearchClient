@@ -9,7 +9,6 @@ import androidx.navigation.compose.rememberNavController
 import az.isfan.test3205.data.enums.RouteEnum
 import az.isfan.test3205.screens.history.HistoryScreen
 import az.isfan.test3205.screens.search.SearchScreen
-import az.isfan.test3205.screens.token.TokenScreen
 
 @Composable
 fun NavGraph(
@@ -19,18 +18,11 @@ fun NavGraph(
 
     NavHost(
         navController = navController,
-        startDestination = RouteEnum.TOKEN.name
+        startDestination = RouteEnum.SEARCH.name
     ) {
         composable(route = RouteEnum.SEARCH.name) {
             Log.i(TAG, "NavGraph: route=${RouteEnum.SEARCH}")
             SearchScreen(
-                navController = navController,
-            )
-        }
-
-        composable(route = RouteEnum.TOKEN.name) {
-            Log.i(TAG, "NavGraph: route=${RouteEnum.TOKEN}")
-            TokenScreen(
                 navController = navController,
             )
         }

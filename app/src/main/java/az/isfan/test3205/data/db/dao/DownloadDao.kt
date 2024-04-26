@@ -9,7 +9,7 @@ import az.isfan.test3205.data.db.entities.DownloadEntity
 @Dao
 interface DownloadDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(token: DownloadEntity)
+    fun insert(download: DownloadEntity)
 
     @Query("SELECT * FROM downloads ORDER BY timestamp DESC")
     fun getDownloads(): List<DownloadEntity>

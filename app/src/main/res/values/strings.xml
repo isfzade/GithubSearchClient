@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">Github Search Client</string>
-    <string name="token">Token</string>
     <string name="search">Search</string>
     <string name="save">Save</string>
     <string name="fail">Fail</string>
     <string name="ok">Ok</string>
     <string name="download_history">Download History</string>
     <string name="nothing_to_show">Nothing to show</string>
-    <string name="github_token_needed">Github token is required in order to search. You can create new token by pressing below link. Create a token and write it the text field.</string>
 </resources>

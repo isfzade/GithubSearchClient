@@ -16,7 +16,6 @@ class Downloader(
     override fun downloadRepo(
         title: String,
         url: String,
-        token: String,
     ): Long {
         Log.i(TAG, "downloadRepo: title=$title, url=$url")
 
@@ -25,7 +24,6 @@ class Downloader(
             .setMimeType("application/zip")
             .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
             .setTitle("$title.zip")
-            .addRequestHeader("Authorization", token)
             .setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "$title.zip")
 
         return downloadManager.enqueue(request)

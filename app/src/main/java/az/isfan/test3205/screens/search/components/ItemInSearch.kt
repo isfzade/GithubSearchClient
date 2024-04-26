@@ -31,7 +31,7 @@ import az.isfan.test3205.data.models.RepoData
 import coil.compose.AsyncImage
 
 @Composable
-fun ItemInRepo(
+fun ItemInSearch(
     repo: RepoData,
     onDownloadButtonClick: (repo: RepoData) -> Unit,
 ) {

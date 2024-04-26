@@ -1,4 +1,4 @@
-package az.isfan.test3205.screens.common
+package az.isfan.test3205.screens.search.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
