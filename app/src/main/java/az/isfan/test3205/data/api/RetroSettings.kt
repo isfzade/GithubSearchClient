@@ -10,7 +10,6 @@ object RetroSettings {
     private const val BASE_URL = "https://api.github.com"
 
     private val client = OkHttpClient.Builder()
-        .addInterceptor(HeaderInterceptor())
         .build()
 
     private val retrofit by lazy {
