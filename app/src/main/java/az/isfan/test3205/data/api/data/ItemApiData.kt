@@ -4,12 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class ItemApiData(
     val name: String,
-
     @SerializedName("html_url")
     val url: String,
-
     val description: String?,
-
     @SerializedName("downloads_url")
     val downloadUrl: String,
     val owner: OwnerApiData,
@@ -18,5 +15,6 @@ data class ItemApiData(
 data class OwnerApiData(
     @SerializedName("login")
     val userName: String,
+    @SerializedName("avatar_url")
     val avatar: String,
 )

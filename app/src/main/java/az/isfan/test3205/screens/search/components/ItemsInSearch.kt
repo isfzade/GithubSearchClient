@@ -25,7 +25,7 @@ fun ItemsInSearch(
         modifier = Modifier
             .fillMaxWidth(),
         verticalArrangement = Arrangement.spacedBy(10.dp),
-        contentPadding = PaddingValues(top=5.dp)
+        contentPadding = PaddingValues(top=5.dp, start = 10.dp, end = 10.dp),
     ) {
         item {
             TextFieldWithButton(
