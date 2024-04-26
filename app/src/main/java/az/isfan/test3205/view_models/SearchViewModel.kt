@@ -33,10 +33,9 @@ class SearchViewModel @Inject constructor(
     }
 
     fun search(
-        page: Int,
         userName: String?,
     ) {
-        Log.i(TAG, "search: userName=$userName, page=$page")
+        Log.i(TAG, "search: userName=$userName")
 
         viewModelScope.launch(Dispatchers.Default) {
             try {
@@ -45,7 +44,6 @@ class SearchViewModel @Inject constructor(
                     val token = getTokenFromDbUseCase.execute() ?: throw Exception("Token cannot be null")
                     if (userName == null) throw Exception("Write something to search")
                     val reposFromApi = searchByApiUseCase.execute(
-                        page = page,
                         userName = userName,
                         token = token.token!!,
                     )

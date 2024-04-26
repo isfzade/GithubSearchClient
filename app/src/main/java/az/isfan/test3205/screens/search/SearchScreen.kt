@@ -21,10 +21,7 @@ fun SearchScreen(
     SearchContent(
         repos = repos,
         onSearchButtonClick = { userName ->
-            searchViewModel.search(
-                page = 1,
-                userName = userName,
-            )
+            searchViewModel.search(userName)
         },
         onHistoryTopBarButtonClick = {
             navController.navigate(RouteEnum.HISTORY.name)

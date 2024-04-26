@@ -9,8 +9,8 @@ import retrofit2.http.Query
 interface ApiDao {
     @GET("search/repositories")
     suspend fun search(
-        @Query("page:") page: Int,
-        @Query("per_page:") perPage: Int,
+        @Query("page:") page: Int = 1,
+        @Query("per_page:") perPage: Int = 100,
         @Query("q") userName: String,
         @Header("Authorization") token: String,
     ): Response<SearchApiData>

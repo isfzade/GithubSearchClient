@@ -16,7 +16,6 @@ class SearchByApiUseCase @Inject constructor(
     private val TAG = "isf_SearchByApiUseCase"
 
     suspend fun execute(
-        page: Int,
         userName: String,
         token: String,
     ): List<RepoData> {
@@ -25,7 +24,6 @@ class SearchByApiUseCase @Inject constructor(
         return withContext(Dispatchers.IO) {
             getBody(
                 apiRepo.search(
-                    page = page,
                     userName = userName,
                     token = token
                 )
