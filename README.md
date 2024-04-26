@@ -35,3 +35,6 @@ In this project different Android tools were used.
 - `Splash`: In order to show the logo of the application when app is started.
 - `Hilt`: This is very common library to inject the dependencies to view models.
 - `Compose Navigation`: It is used for navigate between search and history screens.
+
+### Tools
+You can download APK from here: [click to download](./app-debug.apk)
