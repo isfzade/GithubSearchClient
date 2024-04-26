@@ -10,12 +10,10 @@ class ApiRepo: ApiRepoInterface {
 
     override suspend fun search(
         userName: String,
-        token: String,
     ): Response<SearchApiData> {
         Log.i(TAG, "search: ")
         return RetroSettings.api.search(
             userName = "user:$userName",
-            token = token,
         )
     }
 }

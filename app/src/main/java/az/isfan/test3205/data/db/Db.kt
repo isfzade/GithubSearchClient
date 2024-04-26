@@ -5,20 +5,16 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import az.isfan.test3205.data.db.dao.DownloadDao
-import az.isfan.test3205.data.db.dao.TokenDao
 import az.isfan.test3205.data.db.entities.DownloadEntity
-import az.isfan.test3205.data.db.entities.TokenEntity
 
 @Database(
     entities = [
-        TokenEntity::class,
         DownloadEntity::class,
     ],
-    version=2,
+    version=3,
     exportSchema = false)
 abstract class Db: RoomDatabase() {
 
-    abstract fun tokenDao(): TokenDao
     abstract fun downloadDao(): DownloadDao
 
     companion object{

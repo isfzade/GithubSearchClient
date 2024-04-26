@@ -16,7 +16,6 @@ import androidx.compose.ui.unit.sp
 import az.isfan.test3205.R
 import az.isfan.test3205.data.models.RepoData
 import az.isfan.test3205.general.Cavab
-import az.isfan.test3205.screens.common.TextFieldWithButton
 
 @Composable
 fun ItemsInSearch(
@@ -40,7 +39,7 @@ fun ItemsInSearch(
 
         if (repos is Cavab.Success && repos.data.isNotEmpty()) {
             items(count = repos.data.size) { index ->
-                ItemInRepo(
+                ItemInSearch(
                     repo = repos.data[index],
                     onDownloadButtonClick = onDownloadButtonClick,
                 )

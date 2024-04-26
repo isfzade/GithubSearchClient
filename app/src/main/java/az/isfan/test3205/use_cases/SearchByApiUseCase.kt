@@ -17,7 +17,6 @@ class SearchByApiUseCase @Inject constructor(
 
     suspend fun execute(
         userName: String,
-        token: String,
     ): List<RepoData> {
         Log.i(TAG, "execute: ")
 
@@ -25,7 +24,6 @@ class SearchByApiUseCase @Inject constructor(
             getBody(
                 apiRepo.search(
                     userName = userName,
-                    token = token
                 )
             )
         }.toData()

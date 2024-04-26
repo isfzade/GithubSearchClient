@@ -4,6 +4,5 @@ interface DownloaderInterface {
     fun downloadRepo(
         title: String,
         url: String,
-        token: String,
     ): Long
 }

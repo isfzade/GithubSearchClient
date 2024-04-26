@@ -21,7 +21,6 @@ fun SearchScreen(
 ) {
     val context = LocalContext.current
     val repos = searchViewModel.repos.collectAsStateWithLifecycle().value
-    val token = searchViewModel.token.collectAsStateWithLifecycle().value
 
     SearchContent(
         repos = repos,
@@ -31,23 +30,17 @@ fun SearchScreen(
         onHistoryTopBarButtonClick = {
             navController.navigate(RouteEnum.HISTORY.name)
         },
-        onTokenTopBarButtonClick = {
-            navController.navigate(RouteEnum.TOKEN.name)
-        },
         onDownloadButtonClick = { repo ->
-            if (token != null) {
-                try {
-                    val downloader = Downloader(context)
-                    downloader.downloadRepo(
-                        title = "${repo.owner.name}-${repo.name}",
-                        url = repo.downloadUrl,
-                        token = token
-                    )
-                    searchViewModel.saveDownload(repo)
-                }
-                catch (e: Exception) {
-                    Log.e("isf_", "Download: e=$e")
-                }
+            try {
+                val downloader = Downloader(context)
+                downloader.downloadRepo(
+                    title = "${repo.owner.name}-${repo.name}",
+                    url = repo.downloadUrl,
+                )
+                searchViewModel.saveDownload(repo)
+            }
+            catch (e: Exception) {
+                Log.e("isf_", "Download: e=$e")
             }
         }
     )

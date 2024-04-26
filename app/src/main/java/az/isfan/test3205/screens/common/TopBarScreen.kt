@@ -8,7 +8,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Token
 import androidx.compose.runtime.Composable
 
 @Composable
@@ -16,7 +15,6 @@ fun TopBarScreen(
     title: String,
     onBackButtonClick: (() -> Unit)? = null,
     onHistoryButtonClick: (() -> Unit)? = null,
-    onTokenButtonClick: (() -> Unit)? = null,
     onSearchButtonClick: (() -> Unit)? = null,
 ) {
     TopAppBar(
@@ -47,19 +45,6 @@ fun TopBarScreen(
                     Icon(
                         imageVector = Icons.Default.History,
                         contentDescription = "history button of downloaded repos"
-                    )
-                }
-            }
-
-            if (onTokenButtonClick != null) {
-                IconButton(
-                    onClick = {
-                        onTokenButtonClick()
-                    }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Token,
-                        contentDescription = "token button"
                     )
                 }
             }
