@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.Test3205.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.Test3205</item>
+    </style>
+</resources>
