@@ -12,20 +12,20 @@ Search screen is composed of a text field, search button and list of results.
 Each result contains avatar of author, author name, repository name and repository description.
 It is possible to download the repository by clicking download button or review the repository on browser by clicking the cursor button.
 
-<img src="./ss/1.png" alt="drawing" width="120" height="230"/>
+<img src="./ss/1.png" alt="drawing" width="150" height="300"/>
 
 When download is finished a notification received about the downloaded repository.
 
-<img src="./ss/2.png" alt="drawing" width="120" height="230"/>
+<img src="./ss/2.png" alt="drawing" width="150" height="300"/>
 
 If no result detected or any error obtained an alert dialog is displayed.
 
-<img src="./ss/4.png" alt="drawing" width="120" height="230"/>
+<img src="./ss/4.png" alt="drawing" width="150" height="300"/>
 
 ### Download History
 Download History screen shows the downloaded repositories as list.
 
-<img src="./ss/3.png" alt="drawing" width="120" height="230"/>
+<img src="./ss/3.png" alt="drawing" width="150" height="300"/>
 
 ### Tools
 In this project different Android tools were used.
